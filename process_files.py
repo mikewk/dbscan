@@ -19,7 +19,7 @@ files = [join("data", f) for f in listdir("data") if isfile(join("data", f))]
 output_data = list()
 for f in files:
     # Run DBScan on files
-    pid = re.findall(r"[A-Z]+", f)[0]  # Extract pid from filename
+    pid = re.findall(r"[0-9]+", f)[0]  # Extract pid from filename
     output = db_scan(f, eps, min_samples, min_unique, min_gap, pid)
     output_data.append(output)
 
